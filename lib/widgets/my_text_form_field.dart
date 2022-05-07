@@ -9,10 +9,12 @@ class MyTextFormField extends StatelessWidget {
   final TextEditingController controller;
   final String label;
   final Icon? iconn;
+  final double rad;
   const MyTextFormField({
     required this.controller,
     required this.label,
     this.iconn,
+    this.rad = 30,
   });
 
   @override
@@ -46,11 +48,11 @@ class MyTextFormField extends StatelessWidget {
           filled: true,
           labelText: label,
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(rad),
             borderSide: BorderSide.none,
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(30),
+            borderRadius: BorderRadius.circular(rad),
             borderSide: BorderSide.none,
           ),
           prefixIcon: iconn,

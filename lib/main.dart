@@ -1,5 +1,6 @@
 import 'package:car_pool/provider/request.dart';
 import 'package:car_pool/screens/first_start_screen.dart';
+import 'package:car_pool/screens/otp_screen.dart';
 import 'package:car_pool/screens/request_screen.dart';
 
 import './screens/dashboard_screen.dart';
@@ -89,7 +90,7 @@ class MyApp extends StatelessWidget {
                 ),
               ),
         ),
-        home: FirstStartScreen(),
+        home: const OtpScreen(),
         routes: {
           Authenticate.routeName: (context) => Authenticate(),
           GetDetailsScreen.pathName: (context) => GetDetailsScreen(),
