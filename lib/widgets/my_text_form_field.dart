@@ -1,5 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:flutter/services.dart';
+
 import '../consts/colors.dart';
 import '../provider/media_query.dart';
 import 'package:flutter/material.dart';
@@ -10,11 +12,21 @@ class MyTextFormField extends StatelessWidget {
   final String label;
   final Icon? iconn;
   final double rad;
+  final keytype;
+  final maxlen;
+  final align;
+  final bool? cursor;
+  final TextStyle? style;
   const MyTextFormField({
     required this.controller,
     required this.label,
     this.iconn,
     this.rad = 30,
+    this.keytype,
+    this.maxlen,
+    this.cursor = true,
+    this.align,
+    this.style,
   });
 
   @override
@@ -40,8 +52,13 @@ class MyTextFormField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        cursorColor: primaryColor,
+        textAlign: align,
+        showCursor: cursor,
+        inputFormatters: [LengthLimitingTextInputFormatter(maxlen)],
+        keyboardType: keytype,
         controller: controller,
-        style: const TextStyle(),
+        style: style,
         decoration: InputDecoration(
           focusColor: focusColor,
           fillColor: bgColor,
