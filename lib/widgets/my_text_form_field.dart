@@ -1,7 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors
 
-import 'package:flutter/services.dart';
-
 import '../consts/colors.dart';
 import '../provider/media_query.dart';
 import 'package:flutter/material.dart';
@@ -17,17 +15,18 @@ class MyTextFormField extends StatelessWidget {
   final align;
   final bool? cursor;
   final TextStyle? style;
-  const MyTextFormField({
-    required this.controller,
-    required this.label,
-    this.iconn,
-    this.rad = 30,
-    this.keytype,
-    this.maxlen,
-    this.cursor = true,
-    this.align,
-    this.style,
-  });
+
+  const MyTextFormField(
+      {required this.controller,
+      required this.label,
+      this.iconn,
+      this.rad = 30,
+      this.keytype,
+      this.maxlen,
+      this.cursor = true,
+      this.align,
+      this.style,
+      t});
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +51,23 @@ class MyTextFormField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        onChanged: (val) {
+          if (val.contains(RegExp(r'[0-9]'))) {
+            FocusScope.of(context).nextFocus();
+            return;
+          }
+          ScaffoldMessenger.of(context).removeCurrentSnackBar();
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              backgroundColor: Colors.red,
+              content: Text("Enter a Number"),
+            ),
+          );
+
+          return;
+        },
         cursorColor: primaryColor,
-        textAlign: align,
         showCursor: cursor,
-        inputFormatters: [LengthLimitingTextInputFormatter(maxlen)],
         keyboardType: keytype,
         controller: controller,
         style: style,
