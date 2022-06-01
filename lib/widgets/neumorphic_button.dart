@@ -8,7 +8,8 @@ import '../provider/media_query.dart';
 
 class NeumorphicButton extends StatefulWidget {
   bool ispressed;
-  VoidCallback onTap;
+  VoidCallback? onTap;
+
   // final Widget child;
   NeumorphicButton({
     required this.ispressed,
