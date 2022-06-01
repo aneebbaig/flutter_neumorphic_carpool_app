@@ -1,7 +1,6 @@
 import 'package:car_pool/consts/colors.dart';
 import 'package:car_pool/provider/media_query.dart';
 import 'package:car_pool/screens/dashboard_screen.dart';
-import 'package:car_pool/widgets/neumorphic_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -37,7 +36,7 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   final _formKey = GlobalKey<FormState>();
-
+  bool btnEnabled = false;
   bool ispressed = false;
   bool isLoading = false;
   var pin1Controller = TextEditingController();
@@ -47,17 +46,6 @@ class _OtpScreenState extends State<OtpScreen> {
   String _otp = '';
 
   errorHandling(val) {
-    if (val.isEmpty) {
-      ScaffoldMessenger.of(context)
-        ..clearSnackBars()
-        ..showSnackBar(
-          const SnackBar(
-            content: Text("Field cannot be Empty"),
-          ),
-        );
-      return;
-    }
-    _formKey.currentState!.save();
     if (_otpCheck()) {
       Navigator.of(context).popAndPushNamed(DashboardScreen.pathName);
     }
@@ -68,7 +56,7 @@ class _OtpScreenState extends State<OtpScreen> {
           content: Text("WRONG OTP"),
         ),
       );
-
+    _otp = '';
     return null;
   }
 
@@ -77,6 +65,7 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   bool _otpCheck() {
+    print(_otp);
     if (_otp == '2222') {
       return true;
     }
@@ -84,6 +73,7 @@ class _OtpScreenState extends State<OtpScreen> {
   }
 
   void _onSave() {
+    _formKey.currentState!.save();
     _formKey.currentState!.validate();
   }
 
@@ -91,7 +81,7 @@ class _OtpScreenState extends State<OtpScreen> {
   Widget build(BuildContext context) {
     final mq = Provider.of<MyMediaQuery>(context);
     bool noMatch = false;
-
+    int count = 0;
     return SafeArea(
       child: Scaffold(
         backgroundColor: bgColor,
@@ -131,6 +121,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         controller: pin1Controller,
                         onChanged: (val) {
                           if (val.length == 1) {
+                            count++;
                             FocusScope.of(context).requestFocus(pin2Focus);
                           }
                         },
@@ -162,7 +153,11 @@ class _OtpScreenState extends State<OtpScreen> {
                         },
                         onChanged: (val) {
                           if (val.length == 1) {
+                            count++;
                             FocusScope.of(context).requestFocus(pin3Focus);
+                          }
+                          if (val.isEmpty) {
+                            count--;
                           }
                         },
                         onSaved: (val) {
@@ -193,8 +188,13 @@ class _OtpScreenState extends State<OtpScreen> {
                         },
                         onChanged: (val) {
                           if (val.length == 1) {
+                            count++;
                             FocusScope.of(context).requestFocus(pin4Focus);
                           }
+                          if (val.isEmpty) {
+                            count--;
+                          }
+                          print(count);
                         },
                         onSaved: (val) {
                           _addOtp(val);
@@ -224,8 +224,11 @@ class _OtpScreenState extends State<OtpScreen> {
                         },
                         onChanged: (val) {
                           if (val.length == 1) {
+                            count++;
                             FocusScope.of(context).unfocus();
                           }
+                          count--;
+                          print(count);
                         },
                         onSaved: (val) {
                           _addOtp(val);
@@ -249,17 +252,6 @@ class _OtpScreenState extends State<OtpScreen> {
               ),
               SizedBox(
                 height: mq.getHeight(context) * 0.1,
-              ),
-              Align(
-                alignment: Alignment.center,
-                child: ispressed
-                    ? CircularProgressIndicator(
-                        color: primaryColor,
-                      )
-                    : NeumorphicButton(
-                        ispressed: ispressed,
-                        onTap: _onSave,
-                      ),
               ),
               TextButton(
                 onPressed: () {},
