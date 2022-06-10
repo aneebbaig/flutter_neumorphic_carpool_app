@@ -50,41 +50,12 @@ class GetDetailsScreen extends StatelessWidget {
               MyForm(
                 children: [
                   MyTextFormField(
-                    controller: _nameController,
-                    label: "Full Name",
-                    iconn: const Icon(Icons.person),
-                  ),
-                  SizedBox(
-                    height: mq.getHeight(context) * 0.02,
-                  ),
-                  MyTextFormField(
-                    controller: _nameController,
-                    label: "Seats",
-                    iconn: const Icon(Icons.chair_rounded),
-                  ),
-                  SizedBox(
-                    height: mq.getHeight(context) * 0.02,
-                  ),
-                  MyTextFormField(
-                    controller: _nameController,
-                    label: "Car",
-                    iconn: const Icon(
-                      Icons.car_repair_rounded,
+                    child: TextFormField(
+                      controller: _nameController,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.person),
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: mq.getHeight(context) * 0.02,
-                  ),
-                  MyTextFormField(
-                    controller: _nameController,
-                    label: "From",
-                  ),
-                  SizedBox(
-                    height: mq.getHeight(context) * 0.02,
-                  ),
-                  MyTextFormField(
-                    controller: _nameController,
-                    label: "To",
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.02,

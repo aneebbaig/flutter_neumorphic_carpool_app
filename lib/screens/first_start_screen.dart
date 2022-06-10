@@ -44,8 +44,7 @@ class FirstStartScreen extends StatelessWidget {
                 children: [
                   SizedBox(height: mq.getHeight(context) * 0.1),
                   MyTextFormField(
-                    controller: phoneNumberController,
-                    label: 'Phone Number',
+                    child: TextFormField(),
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.05,

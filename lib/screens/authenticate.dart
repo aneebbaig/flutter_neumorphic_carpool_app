@@ -1,4 +1,5 @@
 import 'package:car_pool/provider/media_query.dart';
+import 'package:car_pool/screens/first_start_screen.dart';
 import 'package:car_pool/widgets/my_circular_buttons.dart';
 import 'package:car_pool/widgets/my_form.dart';
 import 'package:car_pool/widgets/my_text_form_field.dart';
@@ -53,15 +54,13 @@ class _AuthenticateState extends State<Authenticate> {
               MyForm(
                 children: [
                   MyTextFormField(
-                    label: "Email",
-                    controller: _emailController,
+                    child: TextFormField(),
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.02,
                   ),
                   MyTextFormField(
-                    controller: _passController,
-                    label: "Password",
+                    child: TextFormField(),
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.05,
@@ -116,7 +115,8 @@ class _AuthenticateState extends State<Authenticate> {
                   TextButton(
                     onPressed: () {
                       setState(() {
-                        widget._isLogin = !widget._isLogin;
+                        Navigator.of(context)
+                            .pushNamed(FirstStartScreen.pathname);
                       });
                     },
                     child: const Text("Dont Have an account? SIGNUP"),
