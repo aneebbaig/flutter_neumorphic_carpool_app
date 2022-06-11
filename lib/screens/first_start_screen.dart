@@ -1,7 +1,7 @@
 import 'package:car_pool/consts/colors.dart';
+import 'package:car_pool/consts/decorations_helperf.dart';
 import 'package:car_pool/provider/media_query.dart';
 import 'package:car_pool/widgets/my_circular_buttons.dart';
-import 'package:car_pool/widgets/my_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -43,8 +43,11 @@ class FirstStartScreen extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(height: mq.getHeight(context) * 0.1),
-                  MyTextFormField(
-                    child: TextFormField(),
+                  Container(
+                    decoration: textFieldDecoration,
+                    child: TextFormField(
+                      decoration: textFieldInputDecoration,
+                    ),
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.05,

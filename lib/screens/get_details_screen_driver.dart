@@ -1,12 +1,12 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:car_pool/consts/decorations_helperf.dart';
 import 'package:car_pool/provider/media_query.dart';
 import 'package:car_pool/widgets/my_drop_down.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/my_form.dart';
 import '../consts/colors.dart';
-import '../widgets/my_text_form_field.dart';
 
 import 'package:flutter/material.dart';
 
@@ -49,13 +49,13 @@ class GetDetailsScreen extends StatelessWidget {
               ),
               MyForm(
                 children: [
-                  MyTextFormField(
+                  Container(
+                    decoration: textFieldDecoration,
                     child: TextFormField(
-                      controller: _nameController,
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.person),
-                      ),
-                    ),
+                        controller: _nameController,
+                        decoration: textFieldInputDecoration.copyWith(
+                          prefixIcon: const Icon(Icons.person),
+                        )),
                   ),
                   SizedBox(
                     height: mq.getHeight(context) * 0.02,
