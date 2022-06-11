@@ -1,5 +1,5 @@
-import 'package:car_pool/provider/request.dart';
 import 'package:car_pool/screens/first_start_screen.dart';
+import 'package:car_pool/view_models/request_view_model.dart';
 
 import './screens/dashboard_screen.dart';
 
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
           value: MyMediaQuery(),
         ),
         ChangeNotifierProvider.value(
-          value: Request(),
+          value: RequestViewModel(),
         )
       ],
       child: MaterialApp(

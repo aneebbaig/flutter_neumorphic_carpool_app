@@ -1,5 +1,6 @@
 import 'package:car_pool/consts/decorations_helperf.dart';
 import 'package:car_pool/provider/media_query.dart';
+import 'package:car_pool/screens/dashboard_screen.dart';
 import 'package:car_pool/widgets/my_form.dart';
 
 import 'package:car_pool/widgets/neumorphic_container.dart';
@@ -152,7 +153,13 @@ class _AuthenticateState extends State<Authenticate> {
                       style: TextButton.styleFrom(
                         minimumSize: Size(mq.getWidth(context) * 0.5, 40),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        if (isSignup) {
+                          return;
+                        }
+                        Navigator.of(context)
+                            .popAndPushNamed(DashboardScreen.pathName);
+                      },
                     ),
                   ),
                   SizedBox(
