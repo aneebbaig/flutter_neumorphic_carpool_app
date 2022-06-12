@@ -1,9 +1,9 @@
-import 'package:car_pool/consts/decorations_helperf.dart';
-import 'package:car_pool/provider/media_query.dart';
-import 'package:car_pool/screens/dashboard_screen.dart';
-import 'package:car_pool/widgets/my_form.dart';
+import '../consts/decorations_helperf.dart';
+import '../provider/media_query.dart';
+import '../screens/dashboard_screen.dart';
+import '../widgets/my_form.dart';
 
-import 'package:car_pool/widgets/neumorphic_container.dart';
+import '../widgets/neumorphic_container.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

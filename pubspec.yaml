@@ -1,5 +1,5 @@
-name: car_pool
-description: A new Flutter project.
+name: fuelpool
+description: A carpooling service.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   provider: ^6.0.2
   http: ^0.13.4
+  cloud_firestore: ^3.1.17
+  firebase_auth: ^3.3.19
 
 dev_dependencies:
   flutter_test:

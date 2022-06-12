@@ -1,6 +1,6 @@
-import 'package:car_pool/consts/colors.dart';
-import 'package:car_pool/provider/media_query.dart';
-import 'package:car_pool/screens/dashboard_screen.dart';
+import '../consts/colors.dart';
+import '../provider/media_query.dart';
+import '../screens/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

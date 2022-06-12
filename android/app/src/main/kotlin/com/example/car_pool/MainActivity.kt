@@ -1,4 +1,4 @@
-package com.example.car_pool
+package com.example.fuelpool
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -26,3 +26,5 @@ const textFieldInputDecoration = InputDecoration(
     right: 10,
   ),
 );
+
+const double circularRadius = 20;

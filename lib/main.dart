@@ -1,16 +1,18 @@
-import 'package:car_pool/screens/first_start_screen.dart';
-import 'package:car_pool/view_models/request_view_model.dart';
-
+import '../view_models/request_view_model.dart';
 import './screens/dashboard_screen.dart';
-
 import './provider/media_query.dart';
 import './screens/authenticate.dart';
 import './screens/get_details_screen_driver.dart';
 
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+import 'view_models/navigation_view_model.dart';
+
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -26,6 +28,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: RequestViewModel(),
+        ),
+        ChangeNotifierProvider.value(
+          value: NavigationViewModel(),
         )
       ],
       child: MaterialApp(
@@ -93,7 +98,6 @@ class MyApp extends StatelessWidget {
           Authenticate.routeName: (context) => Authenticate(),
           GetDetailsScreen.pathName: (context) => GetDetailsScreen(),
           DashboardScreen.pathName: (context) => DashboardScreen(),
-          FirstStartScreen.pathname: (context) => FirstStartScreen(),
         },
       ),
     );

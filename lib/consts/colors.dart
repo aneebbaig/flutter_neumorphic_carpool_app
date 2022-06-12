@@ -2,6 +2,20 @@ import 'package:flutter/material.dart';
 
 Color primaryColor = Colors.grey.shade500;
 Color bgColor = Colors.grey.shade300;
+Color navBarUnselectedColor = Colors.black54;
+Color navBarSelectedColor = Colors.black54;
+List<LinearGradient> listTileGradientList = [
+  LinearGradient(colors: [Colors.yellow.shade700, Colors.redAccent]),
+  LinearGradient(colors: [Colors.greenAccent, Colors.green.shade800]),
+  LinearGradient(
+      colors: [Colors.purple.shade300, const Color.fromARGB(255, 97, 43, 247)]),
+  const LinearGradient(colors: [
+    Color.fromARGB(255, 46, 156, 211),
+    Color.fromARGB(255, 19, 71, 214)
+  ]),
+];
+
+Color dividerColor = Colors.grey.shade400;
 List<BoxShadow> boxShadowColors = const [
   BoxShadow(
     color: Colors.black54,

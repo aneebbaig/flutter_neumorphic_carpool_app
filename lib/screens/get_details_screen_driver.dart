@@ -1,8 +1,8 @@
 // ignore_for_file: use_key_in_widget_constructors
 
-import 'package:car_pool/consts/decorations_helperf.dart';
-import 'package:car_pool/provider/media_query.dart';
-import 'package:car_pool/widgets/my_drop_down.dart';
+import '../consts/decorations_helperf.dart';
+import '../provider/media_query.dart';
+import '../widgets/my_drop_down.dart';
 import 'package:provider/provider.dart';
 
 import '../widgets/my_form.dart';

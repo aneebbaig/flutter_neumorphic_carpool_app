@@ -1,4 +1,4 @@
-import 'package:car_pool/provider/media_query.dart';
+import '../provider/media_query.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

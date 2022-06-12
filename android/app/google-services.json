@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "76800433123",
+    "project_id": "fuelpool-5fe93",
+    "storage_bucket": "fuelpool-5fe93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:76800433123:android:8405e9e0e42e87d94bded6",
+        "android_client_info": {
+          "package_name": "com.example.fuelpool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "76800433123-cfdl0tiga8lqmtnobpk23qa2o6gpvp6b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAT5ej6mS4Ye0lZgzbo9c59ca2-UWibMIY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "76800433123-cfdl0tiga8lqmtnobpk23qa2o6gpvp6b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

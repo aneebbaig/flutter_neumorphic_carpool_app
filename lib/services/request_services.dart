@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:car_pool/model/request_model.dart';
-import 'package:car_pool/services/api_status.dart';
+import '../model/request_model.dart';
+import '../services/api_status.dart';
 import 'package:http/http.dart' as http;
 
 class RequestServices {
